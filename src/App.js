@@ -1,57 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/navbar/Navbar";
+import Sidebar from "./components/sidebar/Sidebar";
+import Jobs from "./components/jobs/Jobs";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AddJob from "./components/add_Jobs/AddJob";
+import EditJob from "./components/Edit_Job/EditJob";
 
 function App() {
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8">
+       
+        <Sidebar />
+        <div className="lg:pl-[14rem] mt-[5.8125rem]">
+          <Routes>
+        <Route path="/jobs" element={<Jobs />} />
+
+        <Route path="/addjob/" element={<AddJob />} />
+        <Route path="/editjob/:id" element={<EditJob  />} />
+          </Routes>
+          
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

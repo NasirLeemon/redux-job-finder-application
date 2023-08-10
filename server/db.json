@@ -1,0 +1,25 @@
+{
+  "jobs": [
+    {
+      "title": "Junior Executive",
+      "type": "Full Time",
+      "salary": "10001",
+      "deadline": "2023-08-20",
+      "id": 2
+    },
+    {
+      "title": "Software Engineer",
+      "type": "Remote",
+      "salary": "10002",
+      "deadline": "2023-08-15",
+      "id": 3
+    },
+    {
+      "title": "Full Stack Developer",
+      "type": "Internship",
+      "salary": "10003",
+      "deadline": "2023-08-07",
+      "id": 4
+    }
+  ]
+}
